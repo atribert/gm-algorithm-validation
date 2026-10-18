@@ -92,7 +92,7 @@ class TestEncryptionVectors(unittest.TestCase):
 
         document = json.loads(VECTOR_PATH.read_text(encoding="utf-8"))
         tests = sm2_encryption_runner.extract_tests(document)
-        self.assertEqual(len(tests), 5)
+        self.assertEqual(len(tests), 29)
 
     def test_repository_vectors_pass_gmssl(self) -> None:
         import json
@@ -105,7 +105,7 @@ class TestEncryptionVectors(unittest.TestCase):
             sm2_encryption_runner.run_tests(tests, "gmssl", "", output=output),
             sm2_encryption_runner.EXIT_SUCCESS,
         )
-        self.assertIn("Passed: 5", output.getvalue())
+        self.assertIn("Passed: 29", output.getvalue())
 
     def test_duplicate_id_is_rejected(self) -> None:
         document = {

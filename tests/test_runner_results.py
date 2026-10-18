@@ -15,11 +15,12 @@ import runner
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 VECTOR_FILES = {
-    "sm3.json": ("SM3", 15),
-    "hmac-sm3.json": ("HMAC-SM3", 4),
-    "sm4.json": ("SM4", 28),
-    "sm4-ctr-hmac-sm3.json": ("SM4-CTR-HMAC-SM3", 6),
-    "sm2.json": ("SM2", 6),
+    "sm3.json": ("SM3", 31),
+    "hmac-sm3.json": ("HMAC-SM3", 16),
+    "sm4.json": ("SM4", 54),
+    "sm4-ctr-hmac-sm3.json": ("SM4-CTR-HMAC-SM3", 14),
+    "sm2.json": ("SM2", 16),
+    "sm2-encryption.json": ("SM2-ENCRYPTION", 29),
 }
 
 
@@ -34,7 +35,7 @@ class TestStructuredResults(unittest.TestCase):
             for vector_name, (algorithm, total) in VECTOR_FILES.items():
                 with self.subTest(vector=vector_name):
                     result_path = directory / f"{vector_name}.result.json"
-                    backend = "gmssl" if vector_name == "sm2.json" else "openssl"
+                    backend = "gmssl" if vector_name.startswith("sm2") else "openssl"
                     exit_code = self.run_quietly(
                         [
                             str(PROJECT_ROOT / "vectors" / vector_name),
@@ -153,14 +154,14 @@ class TestStructuredResults(unittest.TestCase):
 
         self.assertEqual(exit_code, runner.EXIT_TEST_FAILURE)
         self.assertEqual(report["status"], "failed")
-        self.assertEqual(report["summary"], {"total": 15, "passed": 0, "failed": 15})
+        self.assertEqual(report["summary"], {"total": 31, "passed": 0, "failed": 31})
         self.assertEqual(report["error"]["type"], "backend_mismatches")
-        self.assertEqual(report["error"]["count"], 15)
-        self.assertEqual(len(report["error"]["mismatches"]), 15)
+        self.assertEqual(report["error"]["count"], 31)
+        self.assertEqual(len(report["error"]["mismatches"]), 31)
         first = report["error"]["mismatches"][0]
         last = report["error"]["mismatches"][-1]
         self.assertEqual(first["tcId"], 1)
-        self.assertEqual(last["tcId"], 15)
+        self.assertEqual(last["tcId"], 31)
         self.assertEqual(first["operation"], "SM3")
         self.assertTrue(first["openssl"].startswith("66c7"))
         self.assertEqual(first["gmssl"], "00" * 32)

@@ -32,6 +32,36 @@
           "key": "0123456789abcdeffedcba9876543210",
           "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f",
           "ct": "06989c613da668ad2a8df782e1a8f96a4b910651754b5553f10cfa0c8a09e9e5f42952cf94ac83688437c9b671d6c7fa"
+        },
+        {
+          "tcId": 39,
+          "description": "ECB encrypt: all-00 key/data",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "00000000000000000000000000000000",
+          "pt": "00000000000000000000000000000000",
+          "ct": "9f1f7bff6f5511384d9430531e538fd3"
+        },
+        {
+          "tcId": 41,
+          "description": "ECB encrypt: all-ff key/data",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "ffffffffffffffffffffffffffffffff",
+          "pt": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+          "ct": "edb119f8455fd2327ad6fbedcb5b4f5dedb119f8455fd2327ad6fbedcb5b4f5dedb119f8455fd2327ad6fbedcb5b4f5dedb119f8455fd2327ad6fbedcb5b4f5d"
+        },
+        {
+          "tcId": 51,
+          "description": "ECB encrypt: 256-byte message",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f",
+          "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+          "ct": "8f78763ee06013e0b7622c428fd0528da73851aa4341e968c71dd8a3a0c8497c07d2bcd4b059dc764cf8da28e17de9e8ebbe39df6e2afa7a2803dda937b7d6e3726caad94423c91218a4aa942b9312349d0d1004d9f8b2ff0d6dd04ef762c45b9ca1ebeb19542366b91aab35fc3cd50bcdf37968112fb6ae111f462c8bdf77d0b9f6a46d8e3d31eca4944a8390937da35b9e2908a65f665678207826daf17ccb76cc36f80d17297c88b6b16582d7ecea2631c4196ab6f2e854da81698d84554c5301dcbd58d881cc8dfffdd5a8559d42444eaced14929e412bdf47671111826e85fa7f57606d4d6f24e93a5e24afbd854e7e2942e173d393b68f90d46355533b"
         }
       ]
     },
@@ -65,6 +95,36 @@
           "key": "0123456789abcdeffedcba9876543210",
           "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f",
           "ct": "06989c613da668ad2a8df782e1a8f96a4b910651754b5553f10cfa0c8a09e9e5f42952cf94ac83688437c9b671d6c7fa"
+        },
+        {
+          "tcId": 40,
+          "description": "ECB decrypt: all-00 key/data",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "00000000000000000000000000000000",
+          "pt": "00000000000000000000000000000000",
+          "ct": "9f1f7bff6f5511384d9430531e538fd3"
+        },
+        {
+          "tcId": 42,
+          "description": "ECB decrypt: all-ff key/data",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "ffffffffffffffffffffffffffffffff",
+          "pt": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+          "ct": "edb119f8455fd2327ad6fbedcb5b4f5dedb119f8455fd2327ad6fbedcb5b4f5dedb119f8455fd2327ad6fbedcb5b4f5dedb119f8455fd2327ad6fbedcb5b4f5d"
+        },
+        {
+          "tcId": 52,
+          "description": "ECB decrypt: 256-byte message",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f",
+          "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+          "ct": "8f78763ee06013e0b7622c428fd0528da73851aa4341e968c71dd8a3a0c8497c07d2bcd4b059dc764cf8da28e17de9e8ebbe39df6e2afa7a2803dda937b7d6e3726caad94423c91218a4aa942b9312349d0d1004d9f8b2ff0d6dd04ef762c45b9ca1ebeb19542366b91aab35fc3cd50bcdf37968112fb6ae111f462c8bdf77d0b9f6a46d8e3d31eca4944a8390937da35b9e2908a65f665678207826daf17ccb76cc36f80d17297c88b6b16582d7ecea2631c4196ab6f2e854da81698d84554c5301dcbd58d881cc8dfffdd5a8559d42444eaced14929e412bdf47671111826e85fa7f57606d4d6f24e93a5e24afbd854e7e2942e173d393b68f90d46355533b"
         }
       ]
     },
@@ -101,6 +161,50 @@
           "iv": "000102030405060708090a0b0c0d0e0f",
           "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f",
           "ct": "2677f46b09c122cc975533105bd4a22ad9ee98830e69745c9827f934a19621f8db45a48645909eefda6bae89a72e659b"
+        },
+        {
+          "tcId": 43,
+          "description": "CBC encrypt: all-00 key/data",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "00000000000000000000000000000000",
+          "pt": "00000000000000000000000000000000",
+          "ct": "f2b5107efff125cc0189f76a8b63ce04",
+          "iv": "000102030405060708090a0b0c0d0e0f"
+        },
+        {
+          "tcId": 45,
+          "description": "CBC encrypt: all-ff key/data",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "ffffffffffffffffffffffffffffffff",
+          "pt": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+          "ct": "d46e58a973cc628faf69d982b3006f07ad7d3077f4a66d50ac85f6fc4c4bc63e53809d004483aa49a9f609c92a71b5c998cce1e8670d1101570cb061d6898273",
+          "iv": "000102030405060708090a0b0c0d0e0f"
+        },
+        {
+          "tcId": 47,
+          "description": "CBC encrypt: alternate IV",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f",
+          "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+          "ct": "c9ef0627a2ad6960882c54b3a54cf0259c774903443cf19920b1723af7761e16",
+          "iv": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5"
+        },
+        {
+          "tcId": 53,
+          "description": "CBC encrypt: 256-byte message",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f",
+          "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+          "ct": "1e9634b770f9aebaa9344f5aff9f82a3b542d0bf9357656932b14e4d8ee4ae510994c5fc047c863c84ace8877604a39204f7b1209a16c38205fb6704378a6e583613ffdd6c927e8012a067fa49a0fcc8959d467091948393bbf4afaaba9d3b628ff087786b70a57a0fa79e57c2bc9cd566600451987c3f22cae4490855a838110afa402b986f2593749f4164ea3d0d80b18f2fba89f4cc983624e6ea4b2a055aad80d569330ee528993218ae2e4bce2156849dd4cae88e319c0fd5a038a68332cd9e47649e8ccdd74a405e62e4b8b34f32dfbab55c224323933fddd09de1d987612499778295b928aa17a680bce77e666991f4b5b5afa902afe84fc4f9990420",
+          "iv": "000102030405060708090a0b0c0d0e0f"
         }
       ]
     },
@@ -137,6 +241,50 @@
           "iv": "000102030405060708090a0b0c0d0e0f",
           "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f",
           "ct": "2677f46b09c122cc975533105bd4a22ad9ee98830e69745c9827f934a19621f8db45a48645909eefda6bae89a72e659b"
+        },
+        {
+          "tcId": 44,
+          "description": "CBC decrypt: all-00 key/data",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "00000000000000000000000000000000",
+          "pt": "00000000000000000000000000000000",
+          "ct": "f2b5107efff125cc0189f76a8b63ce04",
+          "iv": "000102030405060708090a0b0c0d0e0f"
+        },
+        {
+          "tcId": 46,
+          "description": "CBC decrypt: all-ff key/data",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "ffffffffffffffffffffffffffffffff",
+          "pt": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+          "ct": "d46e58a973cc628faf69d982b3006f07ad7d3077f4a66d50ac85f6fc4c4bc63e53809d004483aa49a9f609c92a71b5c998cce1e8670d1101570cb061d6898273",
+          "iv": "000102030405060708090a0b0c0d0e0f"
+        },
+        {
+          "tcId": 48,
+          "description": "CBC decrypt: alternate IV",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f",
+          "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+          "ct": "c9ef0627a2ad6960882c54b3a54cf0259c774903443cf19920b1723af7761e16",
+          "iv": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5"
+        },
+        {
+          "tcId": 54,
+          "description": "CBC decrypt: 256-byte message",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f",
+          "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+          "ct": "1e9634b770f9aebaa9344f5aff9f82a3b542d0bf9357656932b14e4d8ee4ae510994c5fc047c863c84ace8877604a39204f7b1209a16c38205fb6704378a6e583613ffdd6c927e8012a067fa49a0fcc8959d467091948393bbf4afaaba9d3b628ff087786b70a57a0fa79e57c2bc9cd566600451987c3f22cae4490855a838110afa402b986f2593749f4164ea3d0d80b18f2fba89f4cc983624e6ea4b2a055aad80d569330ee528993218ae2e4bce2156849dd4cae88e319c0fd5a038a68332cd9e47649e8ccdd74a405e62e4b8b34f32dfbab55c224323933fddd09de1d987612499778295b928aa17a680bce77e666991f4b5b5afa902afe84fc4f9990420",
+          "iv": "000102030405060708090a0b0c0d0e0f"
         }
       ]
     },
@@ -223,6 +371,72 @@
           "iv": "000102030405060708090a0b0c0d0e0f",
           "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20",
           "ct": "06999e6239a36eaa2284fd89eda5f7657f161f5854b6ea16c28809fe9d1db3053c"
+        },
+        {
+          "tcId": 29,
+          "description": "CTR encrypt: 47-byte boundary",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f",
+          "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e",
+          "ct": "8f79743de46515e7bf6b264983dd5c829e344800d3565b82f70d0f0acca47e446acc14983d5eade9d3a02e6d7f348c",
+          "iv": "000102030405060708090a0b0c0d0e0f"
+        },
+        {
+          "tcId": 31,
+          "description": "CTR encrypt: 48-byte boundary",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f",
+          "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f",
+          "ct": "8f79743de46515e7bf6b264983dd5c829e344800d3565b82f70d0f0acca47e446acc14983d5eade9d3a02e6d7f348ca0",
+          "iv": "000102030405060708090a0b0c0d0e0f"
+        },
+        {
+          "tcId": 33,
+          "description": "CTR encrypt: 49-byte boundary",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f",
+          "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f30",
+          "ct": "8f79743de46515e7bf6b264983dd5c829e344800d3565b82f70d0f0acca47e446acc14983d5eade9d3a02e6d7f348ca021",
+          "iv": "000102030405060708090a0b0c0d0e0f"
+        },
+        {
+          "tcId": 35,
+          "description": "CTR encrypt: low-byte counter carry",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f",
+          "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f30",
+          "ct": "af053eb993b729983e5a81d0be0e2be8c2734c37df60c787dbe1ed2d060705010a268edfb100c59f2ede58a444f2ff6b6e",
+          "iv": "000000000000000000000000000000ff"
+        },
+        {
+          "tcId": 37,
+          "description": "CTR encrypt: multi-byte counter carry",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f",
+          "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f30",
+          "ct": "e87cfe961d5e6b72b99e78475cc0f8b17569643cb972ba27bbcd78c802ae58f102b12eee1753aafc634f2f27cff067850e",
+          "iv": "0000000000000000000000000000ffff"
+        },
+        {
+          "tcId": 49,
+          "description": "CTR encrypt: 1024-byte message",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f",
+          "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+          "ct": "8f79743de46515e7bf6b264983dd5c829e344800d3565b82f70d0f0acca47e446acc14983d5eade9d3a02e6d7f348ca02168bf262ad942976cdcd1f982bceab31d4225bc911977044fbd79434f48d8cd065a8fcb770aea9e749fe40531c07884cd7d5409a3fae1f585b5f8a4e593c193d70581a533afcd239fe9e9bdef1c836e0036a7212e2b11b8dd7c61b5734650738bb9977fc587d5d766b7bb6f3a2f6b130f8f78cbf472261ee5175134121fe70f82de2622daab46a319ebf1b9bd436cb159e81374fad08990815b3483c6370bd897aadd4971f33e0ea5ae3eb65232c2b52780fc14b374aa9ccdb0b6332eb04b80468a79cf2699bb954d970c7950ccf69d83843f873033445cefb5d25ba88a8d726cef313704061909ab2cd384cccef252e9255be55e6b12a2d26f2a7b58edba1af20e468c7021a09d248b71fa3e390ad11317326cda6ae6eb5e8cd833cc60cc690ee1e3dc4df543cca374473305e92e3d5e70386ace8d502546eabccbf7fdf5058d37e27de6ae09db1a3ba1930b325be3f9d4099a0a8fa3415d36eedc48d06b8094532ecfd893b646c4f58d666aa9148f29e75a69da7bec7059edccf508431a0df7ae4320be1a5644332ce67b2067373049a561ad0d4dcbdbaf9ec8d240c1eda4d3a94fd7a80fa4c6741251428fda3a72f2ce8b3456f0355101a690480a7dade8492fe3ffc7b57cb8436dafefe16801edc7f5daeef6b4abc9904749ad79dc70d652d039a3bc25b210619b8cd2c2031172dcd99a7219e27a77112a635638b6a9836a1896e4865fb421eef9b19e55b874eb7b51807e6d26bacf7aaf7a1ffc3777384ed5aa1fc59cc77313c7620cc801263852aa7e3df9d949175da3ff414d6e861e86e455606d44446b368bd215a92747ed8bed61235d76415dd84638529b4c13dee3800c960f6fd3c51d407ed2bbf87ccc78b5589cf3fafd6de1e65ec8bec1b4e51811b327e2fce93d8f816e08216310542878d8c45a6d9e054b1a822fe730c31353ad31103e9505872af29a864aa1edae43a05834096a08937192650fb470e459cdf057dbe79c1cfeed2d52f63b80920f0f2e727b1507313b421190505bf46e889a56b0996edf925219e091c773cd851d360a3ecdd6b2b665bc6e7a0cc85570caa51c111ae5e5b4e9de54b42a03dc4e58bb256379970cf0eb5c84a477c98125c3028dc6cc4283b9f7c3d4e573fb605469019540d637ac8cecf4924c776473e1cdf478234bb611a58da86ddd56fd12aef702f59a6998442630468bde22cfbf2a50ce8bb585a80f7ce885107e112cf1ed89690c7d85d835ddfd0271e2d17a15fc2cb7f3be07d90aec532016bc3a4cc7c3de8a4a84136ba0671d14638ad157edb5c584c78b19a26f6161380bd0bbbf7ebdfbffe4c5fc4f17fb604246d4b0dcb8441e5889202d066ddea809438ca680c1a80f",
+          "iv": "000102030405060708090a0b0c0d0e0f"
         }
       ]
     },
@@ -309,6 +523,72 @@
           "iv": "000102030405060708090a0b0c0d0e0f",
           "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20",
           "ct": "06999e6239a36eaa2284fd89eda5f7657f161f5854b6ea16c28809fe9d1db3053c"
+        },
+        {
+          "tcId": 30,
+          "description": "CTR decrypt: 47-byte boundary",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f",
+          "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e",
+          "ct": "8f79743de46515e7bf6b264983dd5c829e344800d3565b82f70d0f0acca47e446acc14983d5eade9d3a02e6d7f348c",
+          "iv": "000102030405060708090a0b0c0d0e0f"
+        },
+        {
+          "tcId": 32,
+          "description": "CTR decrypt: 48-byte boundary",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f",
+          "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f",
+          "ct": "8f79743de46515e7bf6b264983dd5c829e344800d3565b82f70d0f0acca47e446acc14983d5eade9d3a02e6d7f348ca0",
+          "iv": "000102030405060708090a0b0c0d0e0f"
+        },
+        {
+          "tcId": 34,
+          "description": "CTR decrypt: 49-byte boundary",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f",
+          "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f30",
+          "ct": "8f79743de46515e7bf6b264983dd5c829e344800d3565b82f70d0f0acca47e446acc14983d5eade9d3a02e6d7f348ca021",
+          "iv": "000102030405060708090a0b0c0d0e0f"
+        },
+        {
+          "tcId": 36,
+          "description": "CTR decrypt: low-byte counter carry",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f",
+          "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f30",
+          "ct": "af053eb993b729983e5a81d0be0e2be8c2734c37df60c787dbe1ed2d060705010a268edfb100c59f2ede58a444f2ff6b6e",
+          "iv": "000000000000000000000000000000ff"
+        },
+        {
+          "tcId": 38,
+          "description": "CTR decrypt: multi-byte counter carry",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f",
+          "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f30",
+          "ct": "e87cfe961d5e6b72b99e78475cc0f8b17569643cb972ba27bbcd78c802ae58f102b12eee1753aafc634f2f27cff067850e",
+          "iv": "0000000000000000000000000000ffff"
+        },
+        {
+          "tcId": 50,
+          "description": "CTR decrypt: 1024-byte message",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f",
+          "pt": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+          "ct": "8f79743de46515e7bf6b264983dd5c829e344800d3565b82f70d0f0acca47e446acc14983d5eade9d3a02e6d7f348ca02168bf262ad942976cdcd1f982bceab31d4225bc911977044fbd79434f48d8cd065a8fcb770aea9e749fe40531c07884cd7d5409a3fae1f585b5f8a4e593c193d70581a533afcd239fe9e9bdef1c836e0036a7212e2b11b8dd7c61b5734650738bb9977fc587d5d766b7bb6f3a2f6b130f8f78cbf472261ee5175134121fe70f82de2622daab46a319ebf1b9bd436cb159e81374fad08990815b3483c6370bd897aadd4971f33e0ea5ae3eb65232c2b52780fc14b374aa9ccdb0b6332eb04b80468a79cf2699bb954d970c7950ccf69d83843f873033445cefb5d25ba88a8d726cef313704061909ab2cd384cccef252e9255be55e6b12a2d26f2a7b58edba1af20e468c7021a09d248b71fa3e390ad11317326cda6ae6eb5e8cd833cc60cc690ee1e3dc4df543cca374473305e92e3d5e70386ace8d502546eabccbf7fdf5058d37e27de6ae09db1a3ba1930b325be3f9d4099a0a8fa3415d36eedc48d06b8094532ecfd893b646c4f58d666aa9148f29e75a69da7bec7059edccf508431a0df7ae4320be1a5644332ce67b2067373049a561ad0d4dcbdbaf9ec8d240c1eda4d3a94fd7a80fa4c6741251428fda3a72f2ce8b3456f0355101a690480a7dade8492fe3ffc7b57cb8436dafefe16801edc7f5daeef6b4abc9904749ad79dc70d652d039a3bc25b210619b8cd2c2031172dcd99a7219e27a77112a635638b6a9836a1896e4865fb421eef9b19e55b874eb7b51807e6d26bacf7aaf7a1ffc3777384ed5aa1fc59cc77313c7620cc801263852aa7e3df9d949175da3ff414d6e861e86e455606d44446b368bd215a92747ed8bed61235d76415dd84638529b4c13dee3800c960f6fd3c51d407ed2bbf87ccc78b5589cf3fafd6de1e65ec8bec1b4e51811b327e2fce93d8f816e08216310542878d8c45a6d9e054b1a822fe730c31353ad31103e9505872af29a864aa1edae43a05834096a08937192650fb470e459cdf057dbe79c1cfeed2d52f63b80920f0f2e727b1507313b421190505bf46e889a56b0996edf925219e091c773cd851d360a3ecdd6b2b665bc6e7a0cc85570caa51c111ae5e5b4e9de54b42a03dc4e58bb256379970cf0eb5c84a477c98125c3028dc6cc4283b9f7c3d4e573fb605469019540d637ac8cecf4924c776473e1cdf478234bb611a58da86ddd56fd12aef702f59a6998442630468bde22cfbf2a50ce8bb585a80f7ce885107e112cf1ed89690c7d85d835ddfd0271e2d17a15fc2cb7f3be07d90aec532016bc3a4cc7c3de8a4a84136ba0671d14638ad157edb5c584c78b19a26f6161380bd0bbbf7ebdfbffe4c5fc4f17fb604246d4b0dcb8441e5889202d066ddea809438ca680c1a80f",
+          "iv": "000102030405060708090a0b0c0d0e0f"
         }
       ]
     }

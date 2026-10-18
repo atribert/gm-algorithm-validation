@@ -43,6 +43,138 @@
           "msg": "616263",
           "msgLen": 24,
           "tag": "64785b1dc15593a0571fe2e328f04bc32518092851b0391580dcd656e3460e53"
+        },
+        {
+          "tcId": 5,
+          "description": "63-byte key and 0-byte message",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e",
+          "msg": "",
+          "msgLen": 0,
+          "tag": "39dcceca7e86e1f0cf169beceeaa573f9602f57f53531c021fd9192fbc6da2a8"
+        },
+        {
+          "tcId": 6,
+          "description": "63-byte key and 119-byte message",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e",
+          "msg": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f70717273747576",
+          "msgLen": 952,
+          "tag": "95c0cca008619b9e6cea40cefb73a4b74cf9d490a391c74487c9d9c7ab81395d"
+        },
+        {
+          "tcId": 7,
+          "description": "64-byte key and 0-byte message",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+          "msg": "",
+          "msgLen": 0,
+          "tag": "3f21aced563487175a00740c5a13cd3bc7f5a358b7488863ec5cf9a8acca5049"
+        },
+        {
+          "tcId": 8,
+          "description": "64-byte key and 119-byte message",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+          "msg": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f70717273747576",
+          "msgLen": 952,
+          "tag": "d30908e40b2b029ee0f628e52353e67520cac4523a48bda468ee4e3d5a1d67d7"
+        },
+        {
+          "tcId": 9,
+          "description": "65-byte key and 0-byte message",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f40",
+          "msg": "",
+          "msgLen": 0,
+          "tag": "ea3f9bb04c83d54af5b9cbc905defa81618ed6292ac38a47c023f19be7d748c4"
+        },
+        {
+          "tcId": 10,
+          "description": "65-byte key and 119-byte message",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f40",
+          "msg": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f70717273747576",
+          "msgLen": 952,
+          "tag": "969e28c26b508b59e817f058485228befcf1582f5f5201be599c529268e6a520"
+        },
+        {
+          "tcId": 11,
+          "description": "131-byte key and 55-byte message",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182",
+          "msg": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f30313233343536",
+          "msgLen": 440,
+          "tag": "a4ea3e420473bdfa5b6fc005474965840159c2dc0088dff79245f10fba7a8213"
+        },
+        {
+          "tcId": 12,
+          "description": "131-byte key and 56-byte message",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182",
+          "msg": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f3031323334353637",
+          "msgLen": 448,
+          "tag": "a67862499facdc211a90676df512956057e2771e376397f624d01e07d43d7204"
+        },
+        {
+          "tcId": 13,
+          "description": "131-byte key and 64-byte message",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182",
+          "msg": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+          "msgLen": 512,
+          "tag": "683d4421ae5d854d642476cb32a4f0e7396afe026d4f119ea56e87195b63e03c"
+        },
+        {
+          "tcId": 14,
+          "description": "131-byte key and 65-byte message",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182",
+          "msg": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f40",
+          "msgLen": 520,
+          "tag": "ee1dc4794431b1b8acf2ad2831f700c906e8d7242a70e7fd449257e0e0d2da48"
+        },
+        {
+          "tcId": 15,
+          "description": "131-byte key and 1024-byte message",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182",
+          "msg": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+          "msgLen": 8192,
+          "tag": "3f65acfe086bcb7a16e5492157fd7df1800edd1de347b3e981301917abdd5079"
+        },
+        {
+          "tcId": 16,
+          "description": "1-byte key and 12-byte message",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "key": "ff",
+          "msg": "e6b688e681afe8aea4e8af81",
+          "msgLen": 96,
+          "tag": "8ebe159418b3e9720a91777dc1875b77b3c1d656fdc2aaad1cc5e99c40fab5f2"
         }
       ]
     }

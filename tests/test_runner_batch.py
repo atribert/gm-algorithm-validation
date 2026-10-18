@@ -77,7 +77,7 @@ class TestBatchRunner(unittest.TestCase):
             self.assertEqual(exit_code, runner.EXIT_SUCCESS)
             self.assertEqual(errors, "")
             self.assertIn("Files=6", output)
-            self.assertIn("Tests=64", output)
+            self.assertIn("Tests=160", output)
             self.assertEqual(summary["backend"], "cross")
             self.assertEqual(summary["status"], "passed")
             self.assertEqual(
@@ -87,8 +87,8 @@ class TestBatchRunner(unittest.TestCase):
                     "passedFiles": 6,
                     "failedFiles": 0,
                     "errorFiles": 0,
-                    "tests": 64,
-                    "passedTests": 64,
+                    "tests": 160,
+                    "passedTests": 160,
                     "failedTests": 0,
                 },
             )

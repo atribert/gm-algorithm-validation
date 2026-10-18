@@ -97,8 +97,8 @@ decrypt(privateKey, encrypt(publicKey, message)) == message
 | `sm2_cipher.py` | 加解密、C3 校验和密文转换 |
 | `sm2_encryption_runner.py` | 加密、解密和格式向量执行器 |
 | `gmcrypto.py` | 普通用户密钥、签名和加解密命令 |
-| `vectors/sm2.json` | 6 个签名正、负向量 |
-| `vectors/sm2-encryption.json` | 5 个解密、篡改、回环和转换向量 |
+| `vectors/sm2.json` | 16 个签名正、负向量 |
+| `vectors/sm2-encryption.json` | 29 个解密、篡改、回环和转换向量 |
 | `acvp/requests/sm2-request.json` | 本地 ACVP 风格请求样例 |
 | `tests/test_sm2.py` | 签名、编码、输入和后端测试 |
 | `tests/test_sm2_encryption.py` | 密文、完整性、私钥编码和回环测试 |
@@ -126,7 +126,7 @@ python runner.py vectors\sm2.json --backend cross --openssl "C:\path\to\openssl.
 | tcId | 场景 | 目的 |
 |---:|---|---|
 | 1 | 固定测试私钥解密 C1C3C2 | 验证已知回归密文 |
-| 2 | 修改 C3 | 验证篡改拒绝 |
+| 2 | 修改 C1 的最后一个字节 | 验证篡改拒绝 |
 | 3 | 随机加密后立即解密 | 验证回环和随机路径 |
 | 4 | C1C2C3 转 C1C3C2 | 验证字段重排 |
 | 5 | C1C2C3 转 DER | 验证 ASN.1 编码 |
@@ -187,7 +187,7 @@ python -m unittest tests.test_sm2 tests.test_sm2_encryption -v
 python -m unittest discover -s tests -v
 ```
 
-当前完整测试为 192 项通过，另有 1 项在本机旧 OpenSSL 不支持 SM2 签名时按条件跳过。GitHub Actions 同时执行回归向量、ACVP 风格请求复核和报告归档。
+当前完整测试共有 198 项：本机默认旧 OpenSSL 下 197 项通过、1 项因不支持 SM2 签名而按条件跳过。GitHub Actions 同时执行回归向量、ACVP 风格请求复核和报告归档。
 
 ## 14. 退出码
 
@@ -211,3 +211,10 @@ python -m unittest discover -s tests -v
 本实验形成了 SM2 签名、验签、随机加密、解密、完整性检查和格式互操作的完整学习闭环，并能使用两套后端和结构化请求复核。
 
 后续可扩充现行曲线公开向量、密钥生成请求、SM2 密钥交换、OpenSSL EVP C 后端，以及经过审查的混合加密和密钥管理方案。
+
+
+## 2026-10 向量扩充记录
+
+签名新增 tcId=7—16，覆盖 1/31/32/33/65/128 字节、UTF-8 中文、自定义 ID 的有效签名及额外篡改。加密新增 tcId=6—29，覆盖 1/31/32/33/128 字节消息在 C1C3C2、C1C2C3、DER 中的固定密文解密、C2/C3 篡改、错误私钥，以及三种格式的六个转换方向（128 字节消息同时覆盖 DER 长长度编码）。原 tcId=2 实际修改的是 C1，已纠正文档描述。
+
+新增数据已通过 OpenSSL 3.5.4 和 Python gmssl 3.2.2 交叉验证。它们是本地回归/负向向量，不是新增国标或认证向量。生成方式和执行命令见 [向量扩充实验记录](vector-expansion.md)。

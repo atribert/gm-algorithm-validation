@@ -81,11 +81,11 @@ results/
 全仓库测试结果：
 
 ```text
-Ran 192 tests in ...
+Ran 198 tests in ...
 
 OK
 ```
 
 ## 当前结果
 
-当前批量交叉验证覆盖 64 个向量：SM2 签名 6 个、SM2 加密与格式 5 个、SM3 15 个、HMAC-SM3 4 个、SM4 28 个、认证组合 6 个。六个文件均通过对应 OpenSSL 后端与 Python gmssl 3.2.2 验证；SM2 使用支持签名和加密接口的 OpenSSL 3。
+当前批量交叉验证覆盖 160 个向量：SM2 签名 16 个、SM2 加密与格式 29 个、SM3 31 个、HMAC-SM3 16 个、SM4 54 个、认证组合 14 个。六个文件均通过对应 OpenSSL 后端与 Python gmssl 3.2.2 验证；SM2 使用支持签名和加密接口的 OpenSSL 3。

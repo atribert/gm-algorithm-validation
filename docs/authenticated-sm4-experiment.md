@@ -108,7 +108,7 @@ python gmcrypto.py decrypt-auth --key-file auth-key.json --package package.json 
 
 ## 固定回归向量
 
-`vectors/sm4-ctr-hmac-sm3.json` 当前包含 6 个固定实验向量：原有 `abc` 向量，以及空消息、1、16、17、33 byte 明文边界向量。
+`vectors/sm4-ctr-hmac-sm3.json` 当前包含 14 个固定实验向量：原有 `abc`、空消息、1/16/17/33 byte 边界，新增 15/31/32/47/48/49/256 byte 和 UTF-8 中文。新增向量使用非零双密钥，覆盖跨分组密文、认证标签与解密回环，已通过 OpenSSL 3.5.4 和 Python gmssl 3.2.2 验证。
 
 ```text
 明文: 616263
@@ -128,9 +128,9 @@ python runner.py vectors\sm4-ctr-hmac-sm3.json
 预期结果：
 
 ```text
-[PASS] tcId=1 ... tcId=6
+[PASS] tcId=1 ... tcId=14
 
-Total: 6, Passed: 6, Failed: 0
+Total: 14, Passed: 14, Failed: 0
 ```
 
 ## 当前测试
@@ -146,7 +146,7 @@ python -m unittest tests.test_authenticated_sm4 -v
 全量测试结果：
 
 ```text
-Ran 192 tests in ...
+Ran 198 tests in ...
 
 OK
 ```

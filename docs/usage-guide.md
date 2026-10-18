@@ -376,7 +376,7 @@ python runner.py vectors\sm4-ctr-hmac-sm3.json
 python runner.py vectors\hmac-sm3.json
 ```
 
-该文件当前包含 4 个回归向量，覆盖 1、16、64、65 byte HMAC 密钥，并已使用 Python gmssl 3.2.2 交叉验证；它们不标记为官方标准向量。
+该文件当前包含 16 个回归向量，覆盖 1、16、63、64、65、131 byte HMAC 密钥、空消息和 1024 byte 消息，并已使用 Python gmssl 3.2.2 交叉验证；它们不标记为官方标准向量。
 
 ### 5.5 ACVP 风格请求与批量响应
 
@@ -422,12 +422,12 @@ python runner.py vectors\sm3.json
 当前预期结果：
 
 ```text
-[PASS] tcId=1 ... tcId=15
+[PASS] tcId=1 ... tcId=31
 
-Total: 15, Passed: 15, Failed: 0
+Total: 31, Passed: 31, Failed: 0
 ```
 
-当前正式 JSON 文件包含 15 个用例，其中消息 `abc` 示例为：
+当前正式 JSON 文件包含 31 个用例，其中消息 `abc` 示例为：
 
 ```text
 文本：abc
@@ -441,7 +441,7 @@ Total: 15, Passed: 15, Failed: 0
 66c7f0f462eeedd9d1f2d46bdc10e4e24167c4875cf2f7a2297da02b8f4ba8e0
 ```
 
-向量由 2 个国标向量和 13 个边界回归向量组成。边界输入为空消息及 1、31、32、33、55、56、63、64、65、127、128、129 byte 全零消息；其摘要由 OpenSSL 1.1.1i 生成，并已使用 Python gmssl 3.2.2 交叉验证。
+向量由 2 个国标向量和 29 个回归向量组成。最初 13 个回归向量的输入为空消息及 1、31、32、33、55、56、63、64、65、127、128、129 byte 全零消息；其摘要由 OpenSSL 1.1.1i 生成，并已使用 Python gmssl 3.2.2 交叉验证。
 
 ### 6.1 SM3 JSON 格式
 
@@ -500,7 +500,7 @@ python runner.py vectors\sm4.json
 [PASS] tcId=9 mode=CTR direction=encrypt
 [PASS] tcId=10 mode=CTR direction=decrypt
 
-Total: 28, Passed: 28, Failed: 0
+Total: 54, Passed: 54, Failed: 0
 ```
 
 也可以使用兼容入口：
@@ -581,7 +581,7 @@ CTR 可以处理非 16 byte 整数倍的数据。以下用例的明文和密文�
 
 加密测试以 `pt` 为输入、`ct` 为预期输出。解密测试以 `ct` 为输入、`pt` 为预期输出。
 
-当前 28 个 SM4 用例包括 2 个 ECB 国标单分组向量、2 个 ECB 两分组推导向量、4 个原有 CBC 实验向量、4 个 ECB/CBC 三分组向量、2 个 CTR 20 byte 向量，以及 CTR 的 1、15、16、17、31、32、33 byte 加解密边界向量。实验向量由 OpenSSL 1.1.1i 生成，并已使用 Python gmssl 3.2.2 交叉验证；它们不作为官方标准向量。
+当前共 54 个 SM4 用例。最初 28 个用例包括 2 个 ECB 国标单分组向量、2 个 ECB 两分组推导向量、4 个原有 CBC 实验向量、4 个 ECB/CBC 三分组向量、2 个 CTR 20 byte 向量，以及 CTR 的 1、15、16、17、31、32、33 byte 加解密边界向量。实验向量由 OpenSSL 1.1.1i 生成，并已使用 Python gmssl 3.2.2 交叉验证；它们不作为官方标准向量。
 
 ## 8. 运行 SM2 验证
 
@@ -758,7 +758,7 @@ $LASTEXITCODE
 python -m unittest discover -s tests -v
 ```
 
-当前共有 192 项测试：
+当前共有 198 项测试：
 
 - 9 项 SM3 测试
 - 19 项 SM4 测试
@@ -781,11 +781,12 @@ python -m unittest discover -s tests -v
 - 4 项请求 manifest 测试
 - 4 项归档实验报告测试
 - 2 项性能测试工具与报告测试
+- 6 项关键向量场景覆盖检查
 
 当前预期结果：
 
 ```text
-Ran 192 tests in ...
+Ran 198 tests in ...
 
 OK
 ```
@@ -1058,3 +1059,10 @@ git commit -m "描述本次修改"
 6. 研究流式大文件处理、操作系统密钥库和标准化认证加密容器。
 7. 为 SM2 增加密钥生成请求、更多与现行 `sm2p256v1` 完全匹配的公开标准向量和密钥交换实验。
 8. 在具备授权和合规条件后，另行研究 ACVTS 注册、会话和传输流程。
+
+
+## 2026-10 向量扩充记录
+
+正式回归向量合计 160 个：SM3 31、HMAC-SM3 16、SM4 54、认证组合 14、SM2 签名 16、SM2 加密/格式 29。原编号保留。新增用例按 batch=boundary-2026-10 标记；ACVP 请求样例独立维护。
+
+新增数据已通过 OpenSSL 3.5.4 和 Python gmssl 3.2.2 交叉验证。它们是本地回归/负向向量，不是新增国标或认证向量。生成方式和执行命令见 [向量扩充实验记录](vector-expansion.md)。

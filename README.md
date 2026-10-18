@@ -10,7 +10,7 @@
 
 - 验证 `sm2p256v1` 曲线上的 SM2 DER 签名
 - 校验用户 ID、消息长度、未压缩公钥和签名编码
-- 使用 OpenSSL 与 Python GmSSL 对 6 个正、负向量交叉验证
+- 使用 OpenSSL 与 Python GmSSL 对 16 个正、负向量交叉验证
 - 统一 `runner.py` 支持单文件、批量和结构化 SM2 结果
 - `gmcrypto.py` 支持生成 PEM 密钥对、文件签名和验签
 - 支持 PEM 公钥加密、PEM 私钥解密，密文可选 DER、C1C3C2 或 C1C2C3
@@ -57,7 +57,7 @@
 ### GmSSL 独立交叉验证
 
 - 使用 Python `gmssl 3.2.2` 作为第二套密码原语实现
-- 交叉验证全部 64 个 SM2、SM3、HMAC-SM3、SM4 和认证组合向量
+- 交叉验证全部 160 个 SM2、SM3、HMAC-SM3、SM4 和认证组合向量
 - 使用 GmSSL 原始 SM4 分组接口组合无 padding ECB、CBC 和 CTR
 - `runner.py` 支持 `openssl`、`gmssl` 和 `cross` 三种后端
 - `cross` 会逐项比较 OpenSSL 与 GmSSL，任何不一致都返回测试失败
@@ -276,9 +276,9 @@ python runner.py vectors\sm4-ctr-hmac-sm3.json
 当前结果：
 
 ```text
-[PASS] tcId=1 ... tcId=6
+[PASS] tcId=1 ... tcId=14
 
-Total: 6, Passed: 6, Failed: 0
+Total: 14, Passed: 14, Failed: 0
 ```
 
 运行 HMAC-SM3 JSON 回归向量：
@@ -296,9 +296,9 @@ python runner.py vectors\sm3.json
 当前结果：
 
 ```text
-[PASS] tcId=1 ... tcId=15
+[PASS] tcId=1 ... tcId=31
 
-Total: 15, Passed: 15, Failed: 0
+Total: 31, Passed: 31, Failed: 0
 ```
 
 统一入口会根据 JSON 中的 `algorithm` 字段自动选择 SM2、SM2-ENCRYPTION、SM3、HMAC-SM3、SM4 或 SM4-CTR-HMAC-SM3。运行 SM2 向量：
@@ -317,9 +317,9 @@ python runner.py vectors\sm4.json
 当前结果：
 
 ```text
-[PASS] tcId=1 ... tcId=28
+[PASS] tcId=1 ... tcId=54（按模式分组输出）
 
-Total: 28, Passed: 28, Failed: 0
+Total: 54, Passed: 54, Failed: 0
 ```
 
 选择密码后端：
@@ -406,7 +406,7 @@ python experiment_report.py `
 python runner.py --all --backend cross --result-dir results
 ```
 
-程序按文件名顺序运行 `vectors\*.json`。单个文件失败或输入错误时仍继续处理其余文件，最终生成四个逐文件报告和 [summary.json](results/summary.json)。批量退出码优先级为输入/环境错误 `2`、测试失败 `1`、全部通过 `0`。
+程序按文件名顺序运行 `vectors\*.json`。单个文件失败或输入错误时仍继续处理其余文件，最终生成六个逐文件报告和 [summary.json](results/summary.json)。批量退出码优先级为输入/环境错误 `2`、测试失败 `1`、全部通过 `0`。
 
 - `openssl`：默认后端，只运行 OpenSSL。
 - `gmssl`：只运行 Python gmssl，不要求 OpenSSL 在 `PATH`。
@@ -437,7 +437,7 @@ python runner.py vectors\sm4.json --openssl "C:\path\to\openssl.exe"
 python -m unittest discover -s tests -v
 ```
 
-当前共有 192 项测试：
+当前共有 198 项测试：
 
 - 9 项 SM3 测试
 - 19 项 SM4 测试
@@ -460,11 +460,12 @@ python -m unittest discover -s tests -v
 - 4 项请求 manifest 测试
 - 4 项归档实验报告测试
 - 2 项性能测试工具与报告测试
+- 6 项关键向量场景覆盖检查
 
 本次实测结果：
 
 ```text
-Ran 192 tests in ...
+Ran 198 tests in ...
 
 OK
 ```
@@ -497,7 +498,7 @@ SM2 签名向量位于 `vectors/sm2.json`。测试组声明曲线、用户 ID �
 - `expected` 表示验签应成功还是失败。
 - 用户 ID 位于测试组中，并参与 `ZA` 和最终签名摘要计算。
 
-当前 6 个用例覆盖有效签名、空消息、修改消息、修改签名、替换公钥和替换用户 ID。
+当前 16 个用例覆盖有效签名、空消息、二进制和中文消息、不同消息长度，以及修改消息、修改签名、替换公钥和替换用户 ID；默认和自定义 ID 均包含有效签名。
 
 加密与格式向量位于 `vectors/sm2-encryption.json`，支持：
 
@@ -526,7 +527,7 @@ SM2 加密密文由 `C1`、`C2`、`C3` 构成。同一明文重复加密通常�
 - `msgLen`：消息的 bit 长度
 - `md`：预期的 256 bit SM3 摘要
 
-当前 `sm3.json` 共 15 个用例：2 个国标向量，以及空消息和 1、31、32、33、55、56、63、64、65、127、128、129 byte 全零消息组成的 13 个边界回归向量。回归向量由 OpenSSL 1.1.1i 生成，并已使用 Python gmssl 3.2.2 交叉验证。
+当前 `sm3.json` 共 31 个用例。最初 15 个用例为：2 个国标向量，以及空消息和 1、31、32、33、55、56、63、64、65、127、128、129 byte 全零消息组成的 13 个边界回归向量。回归向量由 OpenSSL 1.1.1i 生成，并已使用 Python gmssl 3.2.2 交叉验证。
 
 详细内容参见 [SM3 实验记录](docs/sm3-experiment.md)。
 
@@ -551,7 +552,7 @@ SM4 测试用例示例：
 - `mode`：当前支持 `ECB`、`CBC`、`CTR`
 - `direction`：`encrypt` 或 `decrypt`
 
-当前 `sm4.json` 共 28 个用例：
+当前 `sm4.json` 共 54 个用例；最初 28 个用例如下：
 
 - `tcId=1`、`tcId=2`：`GB/T 32907-2016` 单分组标准向量。
 - `tcId=3`、`tcId=4`：OpenSSL 单分组 CBC 实验向量，已使用 Python gmssl 3.2.2 交叉验证。
@@ -588,3 +589,12 @@ SM4 测试用例示例：
 2. 让同一批 JSON 向量验证命令行后端和 C 后端。
 3. 研究操作系统密钥库、流式大文件处理和标准化认证加密格式。
 4. 研究更接近正式算法注册的 SM2 参数映射和密钥生成请求。
+
+
+## 2026-10 测试向量扩充
+
+6 个 JSON 文件合计 **160 个用例**：SM3 31、HMAC-SM3 16、SM4 54、认证组合 14、SM2 签名 16、SM2 加密/格式 29。新增 96 个用例均为本地回归或负向用例，由 OpenSSL 3.5.4 与 Python gmssl 3.2.2 实际交叉验证，不标记为官方标准向量。
+
+新增重点包括 SM3 填充边界与 4096 字节消息、HMAC 63/64/65 字节密钥、CTR 计数器跨字节进位、中文/二进制输入、SM2 三种格式的固定密文解密，以及 C2/C3 篡改和错误私钥拒绝。认证组合 JSON 为正向加密回环向量；认证失败情形由单元测试覆盖。ACVP 请求样例数量不随本轮回归向量扩充而变化。
+
+详见 [测试向量及说明](docs/测试向量及说明.md) 和 [本轮扩充实验记录](docs/vector-expansion.md)。

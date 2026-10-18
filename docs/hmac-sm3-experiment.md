@@ -76,7 +76,7 @@ openssl dgst -sm3 -mac HMAC -macopt hexkey:<key> -binary
 python runner.py vectors\hmac-sm3.json
 ```
 
-当前 `vectors/hmac-sm3.json` 包含 4 个回归向量，运行结果为 `4/4` 通过：原有 16 byte 密钥向量，以及 1、64、65 byte 全零密钥边界向量。所有 tag 来自 OpenSSL 1.1.1i，并已使用 Python gmssl 3.2.2 交叉验证；它们不属于本项目声称的官方标准向量。
+当前 `vectors/hmac-sm3.json` 包含 16 个回归向量，运行结果为 `16/16` 通过：原有 16 byte 密钥向量，以及 1、64、65 byte 全零密钥边界向量。最初 4 个 tag 来自 OpenSSL 1.1.1i，并已使用 Python gmssl 3.2.2 交叉验证；它们不属于本项目声称的官方标准向量。
 
 HMAC-SM3 的分组长度为 64 byte。1 byte 全零密钥会补零到 64 byte，因此与 64 byte 全零密钥得到相同 tag；65 byte 密钥超过分组长度，会先经过 SM3 压缩，结果随之改变。
 
@@ -93,7 +93,7 @@ HMAC-SM3 的分组长度为 64 byte。1 byte 全零密钥会补零到 64 byte，
 全仓库测试结果：
 
 ```text
-Ran 192 tests in ...
+Ran 198 tests in ...
 
 OK
 ```
@@ -113,3 +113,8 @@ OK
 - 当前密钥文件不是操作系统安全密钥库，程序也不会自动设置或审计文件访问权限。
 - 当前 tag 固定使用完整 32 byte，不支持截断 tag。
 - 当前测试 tag 由 OpenSSL 1.1.1i 得到，并已使用 Python gmssl 3.2.2 交叉验证。
+
+
+## 2026-10 扩充
+
+新增 tcId=5—16：63/64/65 字节非零密钥配空消息和 119 字节消息、131 字节长密钥配 55/56/64/65/1024 字节消息，以及中文输入。新增 tag 由 OpenSSL 3.5.4 和 Python gmssl 3.2.2 交叉验证。详见 [向量扩充实验记录](vector-expansion.md)。

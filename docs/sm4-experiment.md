@@ -146,7 +146,7 @@ CTR 的 IV 在这里作为初始计数器。它不必保密，但在同一密钥
 [PASS] tcId=9 mode=CTR direction=encrypt
 [PASS] tcId=10 mode=CTR direction=decrypt
 
-Total: 28, Passed: 28, Failed: 0
+Total: 54, Passed: 54, Failed: 0
 ```
 
 ## 9. IV 对比实验
@@ -215,12 +215,12 @@ python -m unittest discover -s tests -v
 本次实测结果：
 
 ```text
-Ran 192 tests in ...
+Ran 198 tests in ...
 
 OK
 ```
 
-其中 SM4 单元测试为 19 项；普通用户 CLI 包含 7 项 SM3 测试和 13 项 HMAC-SM3 测试。正式 SM4 JSON 已扩充到 28 个向量，新增 ECB/CBC 三分组实验及 CTR 的 1、15、16、17、31、32、33 byte 加解密边界。
+其中 SM4 单元测试为 19 项；普通用户 CLI 包含 7 项 SM3 测试和 13 项 HMAC-SM3 测试。正式 SM4 JSON 已扩充到 54 个向量，新增 ECB/CBC 三分组实验及 CTR 的 1、15、16、17、31、32、33 byte 加解密边界。
 
 ## 12. 安全性分析
 
@@ -235,7 +235,7 @@ OK
 
 ## 13. 实验结论
 
-本实验完成了基于 OpenSSL 的 SM4-ECB、SM4-CBC 和 SM4-CTR 验证闭环。当前 28 个正式 JSON 向量全部通过 OpenSSL/GmSSL 交叉验证，19 项 SM4 单元测试均通过。
+本实验完成了基于 OpenSSL 的 SM4-ECB、SM4-CBC 和 SM4-CTR 验证闭环。当前 54 个正式 JSON 向量全部通过 OpenSSL/GmSSL 交叉验证，19 项 SM4 单元测试均通过。
 
 实验验证了 SM4 的 128 bit 密钥、ECB/CBC 分组约束、CBC 加解密往返、CTR 非整分组处理以及 IV/计数器规则。当前成果是算法测试向量执行器，还不是面向实际文件的完整加密方案。
 
@@ -246,3 +246,10 @@ OK
 3. 研究 padding、IV 序列化和加密文件格式。
 4. 增加完整性认证，避免仅使用裸 CBC 或裸 CTR。
 5. 继续扩充 SM2 现行曲线公开向量和本地 ACVP 风格接口。
+
+
+## 2026-10 向量扩充记录
+
+SM4 新增 tcId=29—54：47/48/49 字节 CTR、低字节 FF 和低两字节 FFFF 进位、全零/全 FF 密钥与数据、另一组 CBC IV、256 字节 ECB/CBC 和 1024 字节 CTR；全部包含加密和解密。认证组合从 6 增至 14 例，补充 15/31/32/47/48/49/256 字节及 UTF-8 中文。
+
+新增数据已通过 OpenSSL 3.5.4 和 Python gmssl 3.2.2 交叉验证。它们是本地回归/负向向量，不是新增国标或认证向量。生成方式和执行命令见 [向量扩充实验记录](vector-expansion.md)。

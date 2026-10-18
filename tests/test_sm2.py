@@ -57,7 +57,7 @@ def vector_document(**overrides: object) -> dict:
 class TestVectorValidation(unittest.TestCase):
     def test_repository_vectors_are_valid(self) -> None:
         tests = sm2_runner.extract_tests(sm2_runner.load_vectors(VECTOR_PATH))
-        self.assertEqual(len(tests), 6)
+        self.assertEqual(len(tests), 16)
 
     def test_uppercase_hex_is_normalized(self) -> None:
         tests = sm2_runner.extract_tests(

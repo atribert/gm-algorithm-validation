@@ -66,6 +66,123 @@
           "publicKey": "0456cefd60d7c87c000d58ef57fa73ba4d9c0dfa08c08a7331495c2e1da3f2bd5231b7e7e6cc8189f668535ce0f8eaf1bd6de84c182f6c8e716f780d3a970a23c3",
           "signature": "3045022100962e02e24ec3266f82d846abcdac8331f74383ddb0dceaddd1f400a4dd3036af022034e8fe8e589e6cc83e93dcaa1929be66bd602dc6b8748d26c0e3f9b22e52853b",
           "expected": false
+        },
+        {
+          "tcId": 7,
+          "description": "Valid 1-byte message signature",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2; test-only d=1, k=10",
+          "batch": "boundary-2026-10",
+          "operation": "verify",
+          "msg": "00",
+          "msgLen": 8,
+          "publicKey": "0432c4ae2c1f1981195f9904466a39c9948fe30bbff2660be1715a4589334c74c7bc3736a2f4f6779c59bdcee36b692153d0a9877cc62a474002df32e52139f0a0",
+          "signature": "3046022100bb2fe2c460e4b9a7a77dd8213f70ad267de59a8bd01402090401e2f664a60f92022100a2680e9ccf8da32c2c4113ef6047a96c3311122539bc0426d1bb028e0782395f",
+          "expected": true
+        },
+        {
+          "tcId": 8,
+          "description": "Valid 31-byte message signature",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2; test-only d=1, k=11",
+          "batch": "boundary-2026-10",
+          "operation": "verify",
+          "msg": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e",
+          "msgLen": 248,
+          "publicKey": "0432c4ae2c1f1981195f9904466a39c9948fe30bbff2660be1715a4589334c74c7bc3736a2f4f6779c59bdcee36b692153d0a9877cc62a474002df32e52139f0a0",
+          "signature": "304502207571d776fb1483c4fccfd6830a57538453093698c5bfbca370fafdae1cc2a5b3022100c54714438275be1d819814be7ad4563d487f441ebee626d99b3e75322b73ee4f",
+          "expected": true
+        },
+        {
+          "tcId": 9,
+          "description": "Valid 32-byte message signature",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2; test-only d=1, k=12",
+          "batch": "boundary-2026-10",
+          "operation": "verify",
+          "msg": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+          "msgLen": 256,
+          "publicKey": "0432c4ae2c1f1981195f9904466a39c9948fe30bbff2660be1715a4589334c74c7bc3736a2f4f6779c59bdcee36b692153d0a9877cc62a474002df32e52139f0a0",
+          "signature": "3045022100b94c1689a5f36d3a0a14a01359d739d3d15093e9e25dfc8b0f3c1b01f91c8d3d02202359f4baad064962faf5aff653146315d059a5c09fb40450223fec83a05c59f9",
+          "expected": true
+        },
+        {
+          "tcId": 10,
+          "description": "Valid 33-byte message signature",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2; test-only d=1, k=13",
+          "batch": "boundary-2026-10",
+          "operation": "verify",
+          "msg": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20",
+          "msgLen": 264,
+          "publicKey": "0432c4ae2c1f1981195f9904466a39c9948fe30bbff2660be1715a4589334c74c7bc3736a2f4f6779c59bdcee36b692153d0a9877cc62a474002df32e52139f0a0",
+          "signature": "3046022100bcdca125afb9bf9757304c8995a7e69540d40378095af51a55aba95f13a7e385022100a191af6c282320345467d9bb352c0cb4d199ddaf1d188a9e28e61f59b0014f67",
+          "expected": true
+        },
+        {
+          "tcId": 11,
+          "description": "Valid 65-byte message signature",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2; test-only d=1, k=14",
+          "batch": "boundary-2026-10",
+          "operation": "verify",
+          "msg": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f40",
+          "msgLen": 520,
+          "publicKey": "0432c4ae2c1f1981195f9904466a39c9948fe30bbff2660be1715a4589334c74c7bc3736a2f4f6779c59bdcee36b692153d0a9877cc62a474002df32e52139f0a0",
+          "signature": "3045022100a7f8bd4d9b18df39e49b700be7656b14b8e98b66bfbbeea719287c0d792e3c9102202c03a158b27390630db247fa0c4d4a755c8d2a0231050b421d49bbfde0538250",
+          "expected": true
+        },
+        {
+          "tcId": 12,
+          "description": "Valid 128-byte message signature",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2; test-only d=1, k=15",
+          "batch": "boundary-2026-10",
+          "operation": "verify",
+          "msg": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f",
+          "msgLen": 1024,
+          "publicKey": "0432c4ae2c1f1981195f9904466a39c9948fe30bbff2660be1715a4589334c74c7bc3736a2f4f6779c59bdcee36b692153d0a9877cc62a474002df32e52139f0a0",
+          "signature": "30460221008c187077890ab8167aa42d4c3ce481a1c0be9ca5ee5900727b56f22622e1ac47022100b9f3c7c33b7aa3f4c2ade959e18dbf2e91a491182a9984f216107af628646b07",
+          "expected": true
+        },
+        {
+          "tcId": 13,
+          "description": "Valid 12-byte message signature",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2; test-only d=1, k=16",
+          "batch": "boundary-2026-10",
+          "operation": "verify",
+          "msg": "e59bbde5af86e7adbee5908d",
+          "msgLen": 96,
+          "publicKey": "0432c4ae2c1f1981195f9904466a39c9948fe30bbff2660be1715a4589334c74c7bc3736a2f4f6779c59bdcee36b692153d0a9877cc62a474002df32e52139f0a0",
+          "signature": "304402206ea9a5d9a1b36ab9e291ba3b2f9f466eedf9d3971997188adf18f7eb700fe461022048ab2d12af264aa30eb722e268305cc8420505ea041776503a517e0ee4e2ae69",
+          "expected": true
+        },
+        {
+          "tcId": 15,
+          "description": "Modified msg after signing",
+          "sourceType": "negative",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "operation": "verify",
+          "msg": "e59bbde5af86e7adbee5908c",
+          "msgLen": 96,
+          "publicKey": "0432c4ae2c1f1981195f9904466a39c9948fe30bbff2660be1715a4589334c74c7bc3736a2f4f6779c59bdcee36b692153d0a9877cc62a474002df32e52139f0a0",
+          "signature": "304402206ea9a5d9a1b36ab9e291ba3b2f9f466eedf9d3971997188adf18f7eb700fe461022048ab2d12af264aa30eb722e268305cc8420505ea041776503a517e0ee4e2ae69",
+          "expected": false
+        },
+        {
+          "tcId": 16,
+          "description": "Modified signature after signing",
+          "sourceType": "negative",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2",
+          "batch": "boundary-2026-10",
+          "operation": "verify",
+          "msg": "e59bbde5af86e7adbee5908d",
+          "msgLen": 96,
+          "publicKey": "0432c4ae2c1f1981195f9904466a39c9948fe30bbff2660be1715a4589334c74c7bc3736a2f4f6779c59bdcee36b692153d0a9877cc62a474002df32e52139f0a0",
+          "signature": "304402206ea9a5d9a1b36ab9e291ba3b2f9f466eedf9d3971997188adf18f7eb700fe461022048ab2d12af264aa30eb722e268305cc8420505ea041776503a517e0ee4e2ae68",
+          "expected": false
         }
       ]
     },
@@ -85,6 +202,19 @@
           "publicKey": "0432c4ae2c1f1981195f9904466a39c9948fe30bbff2660be1715a4589334c74c7bc3736a2f4f6779c59bdcee36b692153d0a9877cc62a474002df32e52139f0a0",
           "signature": "3045022100962e02e24ec3266f82d846abcdac8331f74383ddb0dceaddd1f400a4dd3036af022034e8fe8e589e6cc83e93dcaa1929be66bd602dc6b8748d26c0e3f9b22e52853b",
           "expected": false
+        },
+        {
+          "tcId": 14,
+          "description": "Valid 18-byte message signature",
+          "sourceType": "regression",
+          "source": "Generated/cross-checked with OpenSSL 3.5.4 30 Sep 2025 (Library: OpenSSL 3.5.4 30 Sep 2025) and Python gmssl 3.2.2; test-only d=1, k=17",
+          "batch": "boundary-2026-10",
+          "operation": "verify",
+          "msg": "616c7465726e617465206964656e74697479",
+          "msgLen": 144,
+          "publicKey": "0432c4ae2c1f1981195f9904466a39c9948fe30bbff2660be1715a4589334c74c7bc3736a2f4f6779c59bdcee36b692153d0a9877cc62a474002df32e52139f0a0",
+          "signature": "3046022100946891d4e42becca6dbdf2576723dae85e23d0e2f7680d1da809c7a375f0d639022100b5cbb7148dea099ac92106d44c6e128b42f1f6f9a611fe9c7fb710377edcd60f",
+          "expected": true
         }
       ]
     }
